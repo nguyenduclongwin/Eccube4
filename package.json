@@ -10,7 +10,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "echo \"Error: no clean specified\" && exit 1",
     "build": "gulp",
-    "start": "gulp start"
+    "start": "gulp start",
+    "console": "docker-compose -f docker-compose.yml exec ec-cube php bin/console",
+    "up": "docker-compose up -d",
+    "down": "docker-compose down",
+    "reset": "yarn console eccube:install --no-interaction",
+    "clear-cache": "yarn console cache:clear --no-warmup",
+    "db-update": "yarn proxy && yarn console doctrine:schema:update --force",
+    "proxy": "yarn console eccube:generate:proxies"
   },
   "repository": {
     "type": "git",
